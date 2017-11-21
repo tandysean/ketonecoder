@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import needleImage from "../assets/needle.svg";
 import { TransitionGroup } from 'react-transition-group';
-import { TweenLite, TweenMax } from 'gsap';
+import { TweenMax } from 'gsap';
 
 export default class Scale extends Component {
 	constructor(props) {
@@ -31,7 +31,7 @@ export default class Scale extends Component {
 
 	runNeedleAnimation(el, degrees) {
 		let displayWeight = this.state.displayWeight;
-    TweenLite
+    TweenMax
 				 .to(el, 1.5, {rotation:degrees, transformOrigin:"50% 92%", ease:Power2.easeInOut}, false)
 				 .delay(1);
 	}
@@ -39,9 +39,11 @@ export default class Scale extends Component {
 	incrementWeightDisplay(display) {
 		let counter = {count: 0};
 		TweenMax
-				 .to(counter, 1.5, {count: "+=20", onUpdate: () => {
-						this.setState({displayWeight: this.props.weight});
-				 }, ease:Power2.easeInOut}, false)
+				 .to(counter, 1.5, {count: this.props.weight, onUpdate: () => {
+						console.log(Math.ceil(counter.count));
+						console.log(this);
+						this.setState({displayWeight: Math.ceil(counter.count)})
+				 }, ease:Power2.easeInOut})
 				 .delay(1);
 	}
 
