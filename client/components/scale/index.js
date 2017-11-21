@@ -1,8 +1,11 @@
+/* Scale/index.js */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import needleImage from "../assets/needle.svg";
 import { TransitionGroup } from 'react-transition-group';
 import { TweenMax } from 'gsap';
+import needleImage from "./needle.svg";
+import './scale.scss';
 
 export default class Scale extends Component {
 	constructor(props) {
@@ -40,8 +43,6 @@ export default class Scale extends Component {
 		let counter = {count: 0};
 		TweenMax
 				 .to(counter, 1.5, {count: this.props.weight, onUpdate: () => {
-						console.log(Math.ceil(counter.count));
-						console.log(this);
 						this.setState({displayWeight: Math.ceil(counter.count)})
 				 }, ease:Power2.easeInOut})
 				 .delay(1);
@@ -49,14 +50,14 @@ export default class Scale extends Component {
 
 	render() {
 		return (
-			<div id="wrapper">
-			  <svg id="meter">
+			<div id="scale-wrapper">
+			  <svg className="meter">
 					<circle id="low" r="150" cx="50%" cy="50%" stroke="#000"
 		strokeWidth="10" fill="none"></circle>
 			  </svg>
 				<TransitionGroup>
-					<img ref={needle => this.needle = needle} id="meter-needle" key="needle-1"src={needleImage}></img>
-					<div ref={display => this.display = display} key="number-increment"> {this.state.displayWeight} lbs</div>
+					<img ref={needle => this.needle = needle} className="meter-needle" key="needle-1"src={needleImage}></img>
+					<div ref={display => this.display = display} className="weight-display"key="number-increment"> {this.state.displayWeight} lbs</div>
 				</TransitionGroup>
 			</div>
 		);

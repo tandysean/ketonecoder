@@ -1,0 +1,37 @@
+#scale-wrapper{
+  width: 400px;
+  height: 400px;
+  position: relative;
+
+
+  .meter{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+
+  .meter-needle {
+    position: absolute;
+    z-index: 5;
+    height: 35%;
+    top: 18%;
+    left: 47%;
+    margin: auto;
+    transform-origin: 50% 92%;
+    transform: rotate(-180deg);  /*moves needle to 0 mark */
+  }
+
+  .weight-display {
+    position: absolute;
+    font-size: 2.8rem;
+    font-family: monospace;
+    top: 61%;
+    left: 29%;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    width: 40%;
+    opacity: .8;
+  }
+}
