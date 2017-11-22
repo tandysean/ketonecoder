@@ -1,6 +1,6 @@
 #scale-wrapper{
-  width: 400px;
-  height: 400px;
+  width: 100px;
+  height: 100px;
   position: relative;
 
 
@@ -24,14 +24,11 @@
 
   .weight-display {
     position: absolute;
-    font-size: 2.8rem;
+    font-size: 1.5rem;
     font-family: monospace;
-    top: 61%;
-    left: 29%;
-    color: black;
-    padding: 5px;
+    top: 90%;
+    left: 11%;
     text-align: center;
-    width: 40%;
-    opacity: .8;
+    width: 85%;
   }
 }

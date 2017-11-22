@@ -5,7 +5,7 @@ import Scale from './components/scale';
 export default () => (
   <div>
     <Route exact path="/" render={ (props) => (
-        <Scale weight={256} />
+        <Scale weight={250} />
       )} />
   </div>
 );

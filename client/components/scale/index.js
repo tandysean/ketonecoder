@@ -52,7 +52,7 @@ export default class Scale extends Component {
 		return (
 			<div id="scale-wrapper">
 			  <svg className="meter" viewBox="0 0 400 400" preserveAspectRatio="xMinYMin meet" >
-					<circle id="low" r="150" cx="50%" cy="50%" stroke="#000"
+					<circle viewBox="0 0 400 400"id="low" r="150" cx="50%" cy="50%" stroke="#000"
 		strokeWidth="10" fill="none"></circle>
 			  </svg>
 				<TransitionGroup>
